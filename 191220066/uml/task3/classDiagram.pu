@@ -1,0 +1,86 @@
+@startuml
+class Color{
+    int r;
+    int g;
+    int b;
+    compareTo()
+    toString()
+    equals()
+    hashCode()
+
+    rank()
+}
+class ColorUtil{
+    getColor()
+    getRandomColors()
+    getColorMap()
+}
+ColorUtil - Color
+interface Sorter {
+
+    load(int[] elements);
+    sort();
+    getPlan();
+    
+}
+class SelectSorter implements Sorter {
+    int[] a;
+    String plan = "";
+    selectSort();
+    swap(int i, int j);
+}
+class quickSorter implements Sorter {
+    int[] a;
+    String plan = "";
+    quickSort();
+    swap(int i, int j);
+}
+interface Linable {
+    setPosition(Position position);
+    getPosition();
+    getValue();
+}
+class Position {
+    Linable linable;
+    Position(Linable linable);
+    setLinable(Linable linable);
+}
+class Line {
+    Position[] positions;
+    
+    Line(int length);
+    put(Linable linable, int i);
+    get(int i);
+    <<override>>toString();
+}
+Line o-- Position
+class Monster implements Linable {
+
+    Color color;
+    
+    Position position;
+
+    Monster(Color)
+    getMonsterByRank(int rank)
+    rank()
+    swapPosition(Gourd another)
+    
+    getMonsters()
+}
+Monster o-- Position
+Monster o-- Color
+Position *-- Linable
+class Snake {
+
+    Snake snake;
+    Sorter sorter;
+    instance()
+    private snake();
+    setSorter(Sorter sorter);
+    lineUp(Line line);
+    parsePlan(String plan)
+    execute(String step)
+}
+Snake o-- Sorter
+Line - Snake: deal <
+@enduml

@@ -1,4 +1,21 @@
 @startuml
+class Color{
+    int r;
+    int g;
+    int b;
+    compareTo()
+    toString()
+    equals()
+    hashCode()
+
+    rank()
+}
+class ColorUtil{
+    getColor()
+    getRandomColors()
+    getColorMap()
+}
+ColorUtil - Color
 interface Sorter {
 
     load(int[] elements);
@@ -6,11 +23,16 @@ interface Sorter {
     getPlan();
     
 }
-class BubbleSorter implements Sorter {
+class SelectSorter implements Sorter {
     int[] a;
     String plan = "";
-    
-    bubbleSort();
+    selectSort();
+    swap(int i, int j);
+}
+class quickSorter implements Sorter {
+    int[] a;
+    String plan = "";
+    quickSort();
     swap(int i, int j);
 }
 interface Linable {
@@ -31,32 +53,33 @@ class Line {
     get(int i);
 }
 Line o-- Position
-enum Gourd implements Linable {
+class Monster implements Linable {
 
-    ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN;
-    final int r;
-    final int g;
-    final int b;
+    Color color;
+    
     Position position;
 
-    Gourd(int r, int g, int b)
-    getGourdByRank(int rank)
+    Monster(Color)
+    getMonsterByRank(int rank)
     rank()
     swapPosition(Gourd another)
+    
+    getMonsters()
 }
-Gourd o-- Position
+Monster o-- Position
+Monster o-- Color
 Position *-- Linable
-class Geezer {
+class Snake {
 
-    Geezer theGeezer;
+    Snake snake;
     Sorter sorter;
-
-    getTheGeezer();
-    private Geezer();
+    instance()
+    private snake();
     setSorter(Sorter sorter);
     lineUp(Line line);
     parsePlan(String plan)
     execute(String step)
 }
-Geezer o-- Sorter
+Snake o-- Sorter
+Line - Snake: deal <
 @enduml
