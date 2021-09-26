@@ -9,11 +9,11 @@ public class Monster implements Linable,Comparable<Monster>{
     public static int MonsterNum = ROW * COL;
     Color color;
     public static Monster monsters[];
-    public static Line getMonsters(int row,int col){
+    public static Matrix getMonsters(int row,int col){
         Monster.ROW = row;
         Monster.COL = col;
         Monster.MonsterNum = Monster.ROW * Monster.COL;
-        Line line = new Line(MonsterNum);
+        Matrix line = new Matrix(MonsterNum);
         Color[] colors = ColorUtil.getRandomColors();
         monsters = new Monster[MonsterNum];
         for(int i = 0;i<MonsterNum;i++){

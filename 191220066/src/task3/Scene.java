@@ -12,7 +12,7 @@ public class Scene {
 
         snake.setSorter(sorter);
 
-        Line line = Monster.getMonsters(12,12);
+        Matrix line = Monster.getMonsters(12,12);
 
         String log = snake.lineUp(line);
         BufferedWriter writer;

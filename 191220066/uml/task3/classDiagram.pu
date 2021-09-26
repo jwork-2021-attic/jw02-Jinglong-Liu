@@ -51,6 +51,10 @@ class Line {
     Line(int length);
     put(Linable linable, int i);
     get(int i);
+}
+class Matrix extends Line{
+    Matrix(int)；
+    Matrix（int，int）
     <<override>>toString();
 }
 Line o-- Position
@@ -82,5 +86,5 @@ class Snake {
     execute(String step)
 }
 Snake o-- Sorter
-Line - Snake: deal <
+Matrix - Snake: deal <
 @enduml

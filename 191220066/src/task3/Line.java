@@ -4,7 +4,7 @@ public class Line {
         this.positions = new Position[length];
     }
 
-    private Position[] positions;
+    protected Position[] positions;
 
     public void put(Linable linable, int i) {
         if (this.positions[i] == null) {
@@ -23,7 +23,7 @@ public class Line {
 
     class Position {
 
-        private Linable linable;
+        Linable linable;
 
         Position(Linable linable) {
             this.linable = linable;
@@ -33,28 +33,20 @@ public class Line {
             this.linable = linable;
             linable.setPosition(this);
         }
+        public Linable getLinable() {
+            return linable;
+        }
 
     }
 
     @Override
     public String toString() {
-        //return toLineString();
-        return toSquareString();
+        return toLineString();
     }
-    public String toLineString(){
+    protected String toLineString(){
         String lineString = "\t";
         for (Position p : positions) {
             lineString += p.linable.toString();
-        }
-        return lineString;
-    }
-    public String toSquareString(){
-        String lineString = "\t";
-        for(int i = 0;i<Monster.ROW;i++){
-            for(int j = 0;j<Monster.COL;j++){
-                lineString += positions[(i*Monster.ROW)+j].linable.toString();
-            }
-            lineString += "\n\t";
         }
         return lineString;
     }
