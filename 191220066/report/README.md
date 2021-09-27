@@ -32,9 +32,9 @@ task2下面演示排成一行，task3演示排成一个矩阵
 
 ###视频：
 ####一行：
-https://asciinema.org/a/XArncSGVs9qSwL2548KCau5EU
+https://asciinema.org/a/LGu3zCgIhET9dcvBqY3mHh7br
 ####方阵（12*12）
-https://asciinema.org/a/RvyhjADdlbIneIli5mXbJLHEZ
+https://asciinema.org/a/txRYf0ar8Kl7dHpmRPEELr3Sq
 第一个视频是选择排序，第二个是快速排序(基于交换的)。虽然我们知道快速排序比选择排序快，但是视频展示的是交换的过程，没有展示比较的过程（有待扩展）选择排序虽然比较的次数多，但是交换的次数少，因此“看起来”快。
 ###类图
 __example__
